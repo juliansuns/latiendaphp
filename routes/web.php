@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Marca;
+use App\Models\Categoria;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +46,16 @@ Route::get('Paises' , function()
 });
 
 Route::get('prueba', function(){
-    return view('productos.create
-    ');
+    
+    //SELECCIONAR MARCA
+    $marcas = Marca::all();
+
+    //SELECCIONAR CATEGORIA
+    $categoria =Categoria::all();
+
+    //INGRESAR MARCAS Y CATEORIAS A VISTAS
+
+    return view('productos.create')
+                ->with('Categorias' , $categoria)
+                ->with('Marcas' , $marcas);
 });
