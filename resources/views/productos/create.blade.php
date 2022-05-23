@@ -1,9 +1,8 @@
 @extends('layouts.principal')
 
 @section('contenido')
-
-
-    <form class="col s8">
+    <form class="col s8" method="POST" action="{{ route('productos.store') }}">
+      @csrf
         <div class="row">
             <div class="col s8">
                     <h1 class="blue-text text-darken-2">Nuevo Producto</h1>
@@ -11,17 +10,17 @@
         </div>
       <div class="row">
         <div class="input-field col s8">
-          <input placeholder="Nombre" id="nombre" type="text" class="validate">
+          <input placeholder="Nombre" id="nombre" name="nombre" type="text" class="validate">
           <label for="nombre">Nombre Producto</label>
         </div>
         <div class="input-field col s8">
-          <input id="desc" type="text" class="validate">
+          <input id="desc" type="text" name="desc" class="validate">
           <label for="last_name">Descripcion</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s8">
-          <input id="precio" type="number" class="validate">
+          <input id="precio" name="precio" type="number" class="validate">
           <label for="disabled">Precio</label>
         </div>
       </div>
@@ -29,23 +28,35 @@
         <div class="input-field col s8">
             <select name="marca" id="marca">
               <option>Elija su marca</option>
-              @foreach($marcas as $marca)
-              <option>{{ $marca->nombre }}</option>
+              @foreach($Marcas as $marca)
+              <option value="{{$marca->id}}">{{ $marca->nombre }}</option>
               @endforeach
             </select>
         </div>
       </div>
       <div class="row">
+        <div class="col s8 input-field">
+          <select name="Categoria" id="Categoria">
+            <option>Elija la Categoria</option>
+              @foreach($Categorias as $Categoria)
+              <option value="{{$Categoria->id}}">
+                {{ $Categoria ->nombre}}
+              </option>
+              @endforeach
+          </select>
+        </div>
+      </div>
+      <div class="row">
         <div class="input-field col s8">
-          <input id="password" type="password" class="validate">
+          <input id="password" name="password"  type="password" class="validate">
           <label for="password">Password</label>
         </div>
       </div>
       <div class="row">
-        <div class="file-field input-field s8">
+        <div class="file-field input-field col s8">
             <div class="btn">
             <span>Ingrese Imagen</span>
-            <input type="file">
+            <input type="file" id="file" name="file">
         </div>
             <div class="file-path-wrapper">
             <input class="file-path validate" type="text">
