@@ -20,14 +20,14 @@
         <div class="input-field col s8">
           <input placeholder="Nombre" id="nombre" name="nombre" type="text" class="validate">
           <label for="nombre">Nombre Producto</label>
-          <strong class="#ff5252 red accent-2">{{ $errors->first('nombre') }}</strong>
+          <strong class="red-text text darken-2">{{ $errors->first('nombre') }}</strong>
         </div>
         
         <!--NOMBRE-->
         <div class="input-field col s8">
           <input id="desc" type="text" name="desc" class="validate">
           <label for="last_name">Descripcion</label>
-          <strong>{{ $errors->first('desc') }}</strong>
+          <strong class="red-text text darken-2">{{ $errors->first('desc') }}</strong>
 
         </div>
       </div>
@@ -35,7 +35,7 @@
         <div class="input-field col s8">
           <input id="precio" name="precio" type="number" class="validate">
           <label for="disabled">Precio</label>
-          <strong>{{ $errors->first('precio') }}</strong>
+          <strong class="red-text text darken-2">{{ $errors->first('precio') }}</strong>
         </div>
       </div>
       <div class="row">
@@ -47,7 +47,7 @@
               @endforeach
             </select>
               <label for="">Elija Marca</label>
-              <strong>{{ $errors->first('marca') }}</strong>
+              <strong class="red-text text darken-2">{{ $errors->first('marca') }}</strong>
         </div>
       </div>
       <div class="row">
@@ -61,7 +61,7 @@
               @endforeach
           </select>
           <label for="">Elija la Categoria</label>
-          <strong>{{ $errors->first('Categoria') }}</strong>
+          <strong class="red-text text darken-2">{{ $errors->first('Categoria') }}</strong>
         </div>
       </div>
       </div>
@@ -73,7 +73,7 @@
       <div class="file-path-wrapper">
         <input class="file-path validate" type="text" placeholder="Elija imagen">
       </div>
-        <strong class="text-danger">{{ $errors->first('imagen') }}</strong>
+        <strong class="red-text text darken-2">{{ $errors->first('imagen') }}</strong>
     </div>
         
     </div>
